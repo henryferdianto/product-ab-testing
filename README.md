@@ -1,5 +1,7 @@
 # Product Feature Launch A/B Testing & Statistical Causal Inference
 
+![ci](https://github.com/henryferdianto/product-ab-testing/actions/workflows/ci.yml/badge.svg)
+
 > **Power analysis, hypothesis testing and confidence intervals for product decisions**
 
 ## Overview
@@ -41,12 +43,32 @@ python src/ab_test.py --control 1000 120 --treatment 1000 145
 pytest -q
 ```
 
+
+<!-- completed -->
+
+## Quickstart with Sample Data
+
+The repository ships a synthetic data generator so the full pipeline can be run
+without any private dataset:
+
+```bash
+make sample && python -m src.run_demo
+python -m src.ab_test --control 2500 250 --treatment 2500 300
+```
+
+## Tests
+
+```bash
+pip install -r requirements.txt
+pytest -q
+```
+
 ## Project Status
 
-This repository contains the project documentation and a runnable implementation
-skeleton. Scripts are structured so that each pipeline stage can be executed and
-extended independently. Update the configuration and data paths to run against
-your own datasets.
+This repository contains the project documentation and a runnable reference
+implementation. A synthetic data generator is included so every pipeline stage
+can be executed end-to-end; replace the sample data with your own datasets in
+`data/raw/` to reproduce real results.
 
 ## License
 
